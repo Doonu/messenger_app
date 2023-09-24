@@ -1,0 +1,33 @@
+{
+    "env": {
+        "browser": true,
+        "es2021": true
+    },
+    "extends": [
+        "plugin:react/recommended",
+        "plugin:prettier/recommended"
+    ],
+    "parserOptions": {
+        "ecmaFeatures": {
+            "jsx": true
+        },
+        "ecmaVersion": 12,
+        "sourceType": "module"
+    },
+    "plugins": [
+        "react",
+        "prettier"
+    ],
+    "rules": {
+        "no-console": "off",
+        "prettier/prettier": ["error"],
+        "consistent-return": "off",
+        "react/jsx-indent": "off",
+        "react/jsx-filename-extension": [1, { "extensions": [".js", ".jsx"] }],
+        "implicit-arrow-linebreak": "off",
+        "react/button-has-type": "off",
+        "jsx-a11y/label-has-associated-control": "off",
+        "no-plusplus": "off",
+        "react/prop-types": "off"
+    }
+}
