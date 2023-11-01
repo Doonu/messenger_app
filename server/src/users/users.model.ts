@@ -8,7 +8,7 @@ interface UserCreationAttrs {
   password: string;
 }
 
-@Table({})
+@Table({tableName: 'users'})
 export class User extends Model<User, UserCreationAttrs> {
 
   @ApiProperty({ example: "1", description: "Уникальный индификатор" })
@@ -23,6 +23,10 @@ export class User extends Model<User, UserCreationAttrs> {
   @Column({ type: DataType.STRING, allowNull: false })
   password: string;
 
+  @ApiProperty({example: 'Олег', description: 'Имя'})
+  @Column({type: DataType.STRING, allowNull: true })
+  name: string;
+
   @ApiProperty({ example: true, description: "Забанен пользователь или нет?" })
   @Column({ type: DataType.BOOLEAN, defaultValue: false })
   banned: boolean;
@@ -30,6 +34,10 @@ export class User extends Model<User, UserCreationAttrs> {
   @ApiProperty({ example: "За оскорбления", description: "Причина блокировки" })
   @Column({ type: DataType.STRING, allowNull: true })
   banReason: string;
+
+  @ApiProperty({example: 'Фото', description: 'Цвет аватарки'})
+  @Column({ type: DataType.STRING, defaultValue: 'red' })
+  imgSubstitute: string;
 
   @BelongsToMany(() => Role, () => UserRoles)
   roles: Role[];

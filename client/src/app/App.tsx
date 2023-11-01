@@ -1,24 +1,14 @@
-import React, { Suspense } from 'react';
-import { BrowserRouter, Route, Routes } from 'react-router-dom';
-import { privateRoutes, publicRoutes } from './routes';
+import React, { useEffect } from 'react';
+import Providers from './providers';
+import { useAppDispatch } from '../hooks/redux';
+import getProfile from '../shared/api/user/getProfile';
 
 const App = () => {
-  const isAuth = true;
-  return (
-    <BrowserRouter>
-      <Suspense fallback={<>Загрзука...</>}>
-        <Routes>
-          {isAuth
-            ? privateRoutes.map((route) => (
-                <Route key={route.path} path={route.path} element={<route.component />} />
-              ))
-            : publicRoutes.map((route) => (
-                <Route key={route.path} path={route.path} element={<route.component />} />
-              ))}
-        </Routes>
-      </Suspense>
-    </BrowserRouter>
-  );
+  //TODO: АЛИАС
+  //TODO: Сделать анимацию перехода между страницами
+  //TODO: Все иконки вынести в отдельный файл и сделать компонентами
+
+  return <Providers />;
 };
 
 export default App;
