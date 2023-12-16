@@ -18,6 +18,7 @@ export interface IRoute {
   path: string;
   component: ComponentType;
   type: string;
+  description?: string;
 }
 
 export enum RoutesNamesPrivate {

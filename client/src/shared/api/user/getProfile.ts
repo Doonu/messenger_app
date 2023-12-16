@@ -62,14 +62,13 @@ const getProfile = createAsyncThunk<IGetProfile, IProfile, IConfigAsyncThunk>(
         banReason: data.banReason,
         avatar: data.imgSubstitute || 'тут будет картинка',
         roles: data.roles.map(({ value, createdAt }) => {
-          console.log(data);
           return {
             value,
             createdAt,
           };
         }),
       }))
-      .catch(({ message, response }: AxiosError<IError>) => {
+      .catch(({ response }: AxiosError<IError>) => {
         const title = response?.data.message || 'Неизвестная ошибка';
         dispatch(
           showMessage({

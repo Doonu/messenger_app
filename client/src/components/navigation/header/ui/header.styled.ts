@@ -1,4 +1,5 @@
 import styled from 'styled-components';
+import MainProfile from '../../../ui/profiles/main';
 
 export const SContainer = styled.div`
   border-bottom: 1px solid ${({ theme }) => theme.colors.secondaryText};
@@ -11,6 +12,13 @@ export const SWrapper = styled.div`
   align-items: center;
   height: 90px;
   justify-content: space-between;
+  padding: 0 10px;
+
+  @media (max-width: ${({ theme }) => theme.breakpoints.desktop}) {
+    & > div:nth-child(3) {
+      display: none !important;
+    }
+  }
 `;
 
 export const STitle = styled.div`
@@ -23,4 +31,8 @@ export const SLeft = styled.div`
   display: flex;
   align-items: center;
   gap: 120px;
+`;
+
+export const SMainProfile = styled(MainProfile)`
+  margin-left: 80px;
 `;

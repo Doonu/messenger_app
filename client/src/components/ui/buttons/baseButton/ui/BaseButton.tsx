@@ -2,13 +2,18 @@ import React, { FC } from 'react';
 import { SButton } from './BaseButton.styled';
 import { IBaseButton } from '../model/IBaseButton';
 
+//TODO: Мб переименовать(какой это нахрен base)
+
 const BaseButton: FC<IBaseButton> = ({
   htmlType,
   children,
   disabled,
   loading,
   variant = 'primary',
-  height,
+  height = '40px',
+  radius,
+  leftIcon,
+  rightIcon,
   ...props
 }) => {
   return (
@@ -18,9 +23,13 @@ const BaseButton: FC<IBaseButton> = ({
       htmlType={htmlType}
       loading={loading}
       disabled={disabled}
+      radius={radius}
+      $isLeftIcon={!!leftIcon}
       {...props}
     >
+      {leftIcon}
       {children}
+      {rightIcon}
     </SButton>
   );
 };

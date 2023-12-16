@@ -13,7 +13,7 @@ interface IConfigAsyncThunk extends IDefaultConfigAsyncThunk {
 
 const postLogin = createAsyncThunk<IPostLogin, ILogin, IConfigAsyncThunk>(
   'auth/login',
-  ({ email, password }, { rejectWithValue, getState, dispatch }) => {
+  ({ email, password }, { rejectWithValue, dispatch }) => {
     return API<ApiLogin>({
       url: `http://localhost:5000/api/auth/login`,
       method: 'POST',
@@ -32,7 +32,7 @@ const postLogin = createAsyncThunk<IPostLogin, ILogin, IConfigAsyncThunk>(
           id: data.id,
         };
       })
-      .catch(({ message, response }: AxiosError<IError>) => {
+      .catch(({ response }: AxiosError<IError>) => {
         const title = response?.data.message || 'Неизвестная ошибка';
         dispatch(
           showMessage({

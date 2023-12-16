@@ -1,4 +1,4 @@
-import { HttpException, HttpStatus, Injectable } from "@nestjs/common";
+ import { HttpException, HttpStatus, Injectable } from "@nestjs/common";
 import { User } from "./users.model";
 import { InjectModel } from "@nestjs/sequelize";
 import { DeleteUserDto } from "./dto/delete-user.dto";

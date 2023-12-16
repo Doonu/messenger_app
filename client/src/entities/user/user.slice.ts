@@ -3,7 +3,7 @@ import getProfile from '../../shared/api/user/getProfile';
 
 //TODO: Соединить модельки из слайса и апи
 
-interface authState {
+export interface authState {
   name: string;
   id: string;
   email: string;

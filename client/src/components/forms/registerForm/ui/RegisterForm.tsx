@@ -47,7 +47,7 @@ const RegisterForm = () => {
           .then((fetchedProfile) => console.log(fetchedProfile))
           .catch(() => {});
       })
-      .catch((e) => {});
+      .catch(() => {});
   };
 
   return (

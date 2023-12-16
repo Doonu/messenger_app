@@ -1,70 +1,91 @@
-import React, { useState } from 'react';
-import {
-  SContainer,
-  SContainerIcons,
-  SDivider,
-  SIcons,
-  SImg,
-  SInput,
-  SMain,
-  SSubmit,
-} from './addPost.styled';
-import { useAppSelector } from '../../../../hooks/redux';
+import React, { FC, useState } from 'react';
+
+import { useAppDispatch, useAppSelector } from '../../../../hooks/redux';
 import { selectorUser } from '../../../../entities/user/user.selectors';
-import { Camera, File, Music, Poster, Setting, Video } from '../../../../shared/assets/icons';
-import BaseButton from '../../../ui/buttons/baseButton';
+import { Formik } from 'formik';
+import { IAllFiles } from '../model/IPost';
+import { Form } from 'antd';
+import { WarningCountPhotos } from '../../../navigation/modal';
+import ModalBase from '../../../navigation/modal/ui/ModalBase';
+import { PreviewPhoto } from '../../../navigation/modal/content/previewPhoto';
+import postCreate from '../../../../shared/api/post/postCreate';
+import ContainerForm from './containerForm/ContainerForm';
+import { IPost } from '../model/IPost';
+import { initialValues } from '../lib/initialValues';
 
-//TODO: Обернуть в формик
+//TODO: Сделать контайнер и сделать только в нем опасити
+//TODO: Сделать мазайку для картинок
+//TODO: Перенести в slice
+//TODO: Подумать -> создать в entities папочку с сохраненными формами(savedFilters/addPost)
 
-const AddPost = () => {
-  const [isActive, setIsActive] = useState(false);
-  const [value, setValue] = useState('');
+interface IPostProps {
+  isDraggablePhoto: boolean;
+  handlerChange: () => void;
+}
 
-  const user = useAppSelector(selectorUser);
+const AddPost: FC<IPostProps> = ({ isDraggablePhoto, handlerChange }) => {
+  const [allFiles, setAllFiles] = useState<IAllFiles>({ photos: [], files: [] });
 
-  const handleBlur = () => {
-    if (!value) setIsActive(false);
-  };
+  const dispatch = useAppDispatch();
 
-  const handleSubmit = () => {
-    console.log(value);
-    setValue('');
-    setIsActive(false);
-  };
+  const { id } = useAppSelector(selectorUser);
 
   return (
-    <SContainer onFinish={handleSubmit} position={isActive}>
-      <SMain position={isActive}>
-        <SImg color={user.avatar}>{user.name[0]}</SImg>
-        <SInput
-          value={value}
-          position={isActive}
-          onChange={(e) => setValue(e.target.value)}
-          onBlur={handleBlur}
-          onFocus={() => setIsActive(true)}
-          placeholder="Что у вас нового?"
-        />
-      </SMain>
-      <SContainerIcons position={isActive}>
-        <SIcons>
-          {isActive && <Poster />}
-          {isActive && <SDivider />}
-          <Camera title={'Камера'} />
-          <Video />
-          <Music />
-          <File />
-        </SIcons>
-        {isActive && (
-          <SSubmit>
-            <Setting />
-            <BaseButton htmlType="submit" disabled={!value} height="40px">
-              Отправить
-            </BaseButton>
-          </SSubmit>
-        )}
-      </SContainerIcons>
-      {/*<BaseButton variant="secondary">Отправить</BaseButton>*/}
-    </SContainer>
+    <Formik<IPost>
+      initialValues={initialValues}
+      onSubmit={(values, { resetForm, setFieldValue }) => {
+        setFieldValue('isActive', false);
+        const photosSend = allFiles?.photos.map(({ photo }) => photo);
+        const filesSend = allFiles?.files.map(({ file }) => file);
+
+        if (!photosSend) return;
+        dispatch(
+          postCreate({
+            userId: +id,
+            content: values.content.toString().split('\n'),
+            files: [...photosSend, ...filesSend],
+            isDisabledComments: values.isDisabledComments,
+          })
+        );
+
+        setAllFiles({ photos: [], files: [] });
+        resetForm();
+      }}
+    >
+      {({ values, setFieldValue, handleSubmit }) => (
+        <Form encType="multipart/form-data" layout="vertical" onFinish={handleSubmit}>
+          <ModalBase
+            onClose={() => setFieldValue('isWarningModal', false)}
+            width="400px"
+            open={values.isWarningModal}
+          >
+            <WarningCountPhotos message={values.isWarningModalTitle} />
+          </ModalBase>
+          <ModalBase
+            isFooter={false}
+            width="max-content"
+            onClose={() => setFieldValue('isPreviewPhoto', false)}
+            open={values.isPreviewPhoto}
+            padding="0 0 0px 0"
+          >
+            {allFiles?.photos && (
+              <PreviewPhoto
+                list={allFiles.photos}
+                description={values.content.toString().split('\n')}
+              />
+            )}
+          </ModalBase>
+          {allFiles && (
+            <ContainerForm
+              setData={setAllFiles}
+              data={allFiles}
+              isDraggablePhoto={isDraggablePhoto}
+              handlerChange={handlerChange}
+            />
+          )}
+        </Form>
+      )}
+    </Formik>
   );
 };
 

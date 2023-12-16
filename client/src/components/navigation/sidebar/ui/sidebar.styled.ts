@@ -6,12 +6,16 @@ export const SContainer = styled.div<SidebarProps>`
   max-width: 250px;
   position: absolute;
   top: 0;
-  ${({ right }) =>
-    right
+  ${({ $right }) =>
+    $right
       ? css`
           right: 0;
         `
       : css`
           left: 0;
         `};
+
+  @media (max-width: ${({ theme }) => theme.breakpoints.bigDesktop}) {
+    display: none;
+  }
 `;

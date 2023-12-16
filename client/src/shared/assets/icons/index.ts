@@ -4,7 +4,12 @@ import { BsFillCameraFill } from 'react-icons/bs';
 import { AiOutlineFile, AiOutlinePlayCircle } from 'react-icons/ai';
 import { HiOutlineMusicalNote } from 'react-icons/hi2';
 import { GiTargetPoster } from 'react-icons/gi';
-import { FiSettings } from 'react-icons/fi';
+import { FaPenFancy, FaRegHeart } from 'react-icons/fa';
+import { IoMdClose, IoMdHeart } from 'react-icons/io';
+import { TbShare3 } from 'react-icons/tb';
+import { GoComment } from 'react-icons/go';
+import { SlMagnifierAdd } from 'react-icons/sl';
+import { MdArrowBackIos, MdArrowForwardIos } from 'react-icons/md';
 
 export const ArrowDown = styled(IoCaretDownOutline)``;
 
@@ -38,7 +43,7 @@ export const Music = styled(HiOutlineMusicalNote).attrs({
   }
 `;
 
-export const File = styled(AiOutlineFile).attrs({
+export const SFile = styled(AiOutlineFile).attrs({
   size: 25,
 })`
   color: ${({ theme }) => theme.colors.text};
@@ -58,12 +63,46 @@ export const Poster = styled(GiTargetPoster).attrs({
   }
 `;
 
-export const Setting = styled(FiSettings).attrs({
-  size: 35,
-})`
+export const Like = styled(FaRegHeart)`
   color: ${({ theme }) => theme.colors.text};
-  cursor: pointer;
-  &:hover {
-    opacity: 0.7;
-  }
+`;
+
+export const BgLike = styled(IoMdHeart).attrs({
+  color: 'white',
+})``;
+
+export const Shared = styled(TbShare3)`
+  color: ${({ theme }) => theme.colors.text};
+`;
+
+export const Comment = styled(GoComment)`
+  color: ${({ theme }) => theme.colors.text};
+`;
+
+export const Close = styled(IoMdClose)`
+  color: ${({ theme }) => theme.colors.active};
+`;
+
+export const Magnifier = styled(SlMagnifierAdd).attrs({
+  size: 20,
+})`
+  color: ${({ theme }) => theme.colors.active};
+`;
+
+export const BeautPen = styled(FaPenFancy).attrs({
+  size: 20,
+})`
+  color: ${({ theme }) => theme.colors.active};
+`;
+
+export const ArrowRight = styled(MdArrowBackIos).attrs({
+  size: 50,
+})`
+  color: ${({ theme }) => theme.colors.active};
+`;
+
+export const ArrowLeft = styled(MdArrowForwardIos).attrs({
+  size: 50,
+})`
+  color: ${({ theme }) => theme.colors.active};
 `;

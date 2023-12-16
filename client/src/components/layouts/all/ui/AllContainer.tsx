@@ -14,7 +14,7 @@ const AllContainer: FC<AllContainerProps> = ({ children }) => {
       <SMain>
         <Sidebar>content</Sidebar>
         <SCenter>{children}</SCenter>
-        <Sidebar right>
+        <Sidebar $right>
           <MainAdvancedProfile />
         </Sidebar>
       </SMain>

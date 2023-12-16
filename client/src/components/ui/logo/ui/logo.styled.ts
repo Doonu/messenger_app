@@ -6,20 +6,24 @@ export const SContainer = styled.div`
   align-items: center;
   gap: 25px;
   color: ${({ theme }) => theme.colors.active};
+
+  @media (max-width: ${({ theme }) => theme.breakpoints.bigDesktop}) {
+    gap: 30px;
+  }
 `;
 
-export const SContainerIcon = styled.div<Pick<ILogo, 'pulse' | 'sizeBg' | 'shadow'>>`
-  animation: ${({ pulse }) => pulse && `color-change 5s infinite`};
+export const SContainerIcon = styled.div<Pick<ILogo, '$pulse' | '$sizeBg' | '$shadow'>>`
+  animation: ${({ $pulse }) => $pulse && `color-change 5s infinite`};
   background: ${({ theme }) => theme.colors.blue};
   border-radius: 15px;
 
-  ${({ sizeBg }) => css`
-    width: ${sizeBg};
-    height: ${sizeBg};
+  ${({ $sizeBg }) => css`
+    width: ${$sizeBg};
+    height: ${$sizeBg};
   `}
 
-  box-shadow: ${({ shadow, theme }) =>
-    shadow &&
+  box-shadow: ${({ $shadow, theme }) =>
+    $shadow &&
     `${theme.colors.blue} 6px 2px 16px 0px,
     ${theme.colors.blue} -6px -2px 16px 0px`};
   display: flex;

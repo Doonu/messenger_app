@@ -2,10 +2,25 @@ import styled, { css } from 'styled-components';
 import { Button } from 'antd';
 import { IBaseButton } from '../model/IBaseButton';
 
-export const SButton = styled(Button)<IBaseButton>`
-  background: ${({ theme }) => theme.colors.blue};
+interface BaseButtonProps extends Omit<IBaseButton, 'leftIcon'> {
+  $isLeftIcon: boolean;
+}
+
+export const SButton = styled(Button)<BaseButtonProps>`
+  ${({ $isLeftIcon }) =>
+    $isLeftIcon &&
+    css`
+      display: flex;
+      align-items: center;
+      gap: 5px;
+      max-height: 30px;
+    `}
+
+  background: ${({ theme, bgTransparent }) => (bgTransparent ? 'transparent' : theme.colors.blue)};
   color: ${({ theme }) => theme.colors.active};
   border: none;
+  border-radius: ${({ radius }) => (radius ? `${radius}px` : '')};
+  max-height: ${({ height }) => height};
 
   &:hover {
     color: ${({ theme }) => theme.colors.active} !important;

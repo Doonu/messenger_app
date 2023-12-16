@@ -1,4 +1,4 @@
-import React, { Suspense, useEffect, useState } from 'react';
+import React, { Suspense, useEffect } from 'react';
 import { BrowserRouter, Route, Routes } from 'react-router-dom';
 import { privateRoutes, publicRoutes } from '../routes';
 import { useAppDispatch, useAppSelector } from '../../hooks/redux';

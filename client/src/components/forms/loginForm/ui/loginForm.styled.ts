@@ -45,7 +45,7 @@ export const SInput = styled(Input).attrs({
 
 export const SLogo = styled(Logo).attrs({
   size: 120,
-  sizeBg: '150px',
+  $sizeBg: '150px',
   color: 'white',
 })`
   align-self: center;

@@ -1,5 +1,5 @@
 import React from 'react';
-import { Container, SItem, SLink, SNotify } from './navbar.styled';
+import { Container, SDescription, SItem, SLink, SNotify } from './navbar.styled';
 import { NavbarDto } from '../lib/dto';
 import { useLocation } from 'react-router-dom';
 
@@ -9,10 +9,11 @@ const Navbar = () => {
   return (
     <Container>
       {NavbarDto.map((value) => (
-        <SLink active={locate.pathname === value.path} to={value.path} key={value.path}>
+        <SLink $active={locate.pathname === value.path} to={value.path} key={value.path}>
           <SItem>
             <value.component />
             {false && <SNotify />}
+            <SDescription>{value.description}</SDescription>
           </SItem>
         </SLink>
       ))}

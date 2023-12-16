@@ -5,9 +5,9 @@ import { ILogo } from '../model/ILogo';
 
 const Logo: FC<ILogo> = ({
   size,
-  pulse = false,
-  sizeBg = '40px',
-  shadow,
+  $pulse = false,
+  $sizeBg = '40px',
+  $shadow,
   title,
   children,
   ...props
@@ -15,7 +15,7 @@ const Logo: FC<ILogo> = ({
   return (
     <SContainer>
       {title === 'left' && children}
-      <SContainerIcon sizeBg={sizeBg} pulse={pulse} shadow={shadow}>
+      <SContainerIcon $sizeBg={$sizeBg} $pulse={$pulse} $shadow={$shadow}>
         <BsDiscord size={size} {...props} />
       </SContainerIcon>
       {title === 'right' && children}

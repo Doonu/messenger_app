@@ -32,7 +32,7 @@ const postRegistration = createAsyncThunk<IPostRegister, IRegister, IConfigAsync
           id: data.id,
         };
       })
-      .catch(({ message, response }: AxiosError<IError>) => {
+      .catch(({ response }: AxiosError<IError>) => {
         const title = response?.data.message || 'Неизвестная ошибка';
         dispatch(
           showMessage({

@@ -1,13 +1,11 @@
-import React, { useEffect } from 'react';
+import React from 'react';
 
-import { SContainer, SLeft, STitle, SWrapper } from './header.styled';
+import { SContainer, SLeft, SMainProfile, STitle, SWrapper } from './header.styled';
 import Navbar from '../../../ui/navbar';
 import MainProfile from '../../../ui/profiles/main';
-import avatarProfile from '../../../../shared/assets/avatar.jpg';
 import Logo from '../../../ui/logo';
-import { useAppDispatch, useAppSelector } from '../../../../hooks/redux';
+import { useAppSelector } from '../../../../hooks/redux';
 import { selectorUser } from '../../../../entities/user/user.selectors';
-import getProfile from '../../../../shared/api/user/getProfile';
 import { SearchForm } from '../../../forms/searchForm';
 
 const Header = () => {
@@ -17,14 +15,12 @@ const Header = () => {
   return (
     <SContainer>
       <SWrapper>
-        <SLeft>
-          <Logo shadow size={20} color="white" title={'right'}>
-            <STitle>Discord</STitle>
-          </Logo>
-          <Navbar />
-        </SLeft>
+        <Logo $shadow size={20} color="white" title={'right'}>
+          <STitle>Discord</STitle>
+        </Logo>
+        <Navbar />
         <SearchForm />
-        <MainProfile avatar={user.avatar} name={user.name} />
+        <SMainProfile avatar={user.avatar} name={user.name} />
       </SWrapper>
     </SContainer>
   );
