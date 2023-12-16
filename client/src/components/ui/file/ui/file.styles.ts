@@ -5,13 +5,11 @@ import { Typography } from 'antd';
 export const SContainer = styled.a`
   display: flex;
   flex-direction: column;
-
   width: 100px;
 `;
 
 export const SLink = styled.a`
   color: ${({ theme }) => theme.colors.white};
-
   display: flex;
   flex-direction: column;
   align-items: center;

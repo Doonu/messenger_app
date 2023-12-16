@@ -16,7 +16,7 @@ const Files: FC<IFilesProps> = ({ data, setData }) => {
 
   return (
     <SFiles>
-      {data.files.map(({ id, url, file }, i) => (
+      {data.files.map(({ id, url, file }) => (
         <File file={file} key={id} url={url} onDelete={() => handlerFilterFiles(id)} />
       ))}
     </SFiles>

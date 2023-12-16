@@ -1,7 +1,7 @@
 import React, { useEffect, useState } from 'react';
 import Post from '../../../../components/ui/post/ui/Post';
 import AllContainer from '../../../../components/layouts/all';
-import AddPost from '../../../../components/forms/addPost';
+import AddPost from '../../../../components/forms/AddPost';
 import { useAppDispatch, useAppSelector } from '../../../../hooks/redux';
 import { selectorPost } from '../../../../entities/post/post.selectors';
 import { SList } from './Home.styled';

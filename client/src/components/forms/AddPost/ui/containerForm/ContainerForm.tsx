@@ -56,7 +56,7 @@ const ContainerForm: FC<IContainerFormProps> = ({
       return;
     }
 
-    Array.from(files).forEach((fileItem, i) => {
+    Array.from(files).forEach((fileItem) => {
       let reader = new FileReader();
 
       if (fileItem.type.indexOf('image') === 0) {

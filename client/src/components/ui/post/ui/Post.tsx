@@ -4,7 +4,7 @@ import MainPostProfile from '../../profiles/mainPost';
 import { postState } from '../../../../entities/post/model/IPost';
 import { postTime } from '../../../../shared/util/time';
 import LikeButton from '../../buttons/likesButton/likeButton';
-import { IAllFiles, IFiles, IFilesPost } from '../../../forms/addPost/model/IPost';
+import { IFilesPost } from '../../../forms/AddPost/model/IPost';
 import { v4 } from 'uuid';
 
 interface PostProps {

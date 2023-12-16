@@ -14,7 +14,7 @@ export const GlobalStyles = createGlobalStyle`
           height: auto;
         };
     }
-
+    
     *,
     *::before,
     *::after {

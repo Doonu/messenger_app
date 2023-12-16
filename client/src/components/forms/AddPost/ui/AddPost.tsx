@@ -3,15 +3,16 @@ import React, { FC, useState } from 'react';
 import { useAppDispatch, useAppSelector } from '../../../../hooks/redux';
 import { selectorUser } from '../../../../entities/user/user.selectors';
 import { Formik } from 'formik';
-import { IAllFiles } from '../model/IPost';
+
 import { Form } from 'antd';
 import { WarningCountPhotos } from '../../../navigation/modal';
 import ModalBase from '../../../navigation/modal/ui/ModalBase';
 import { PreviewPhoto } from '../../../navigation/modal/content/previewPhoto';
 import postCreate from '../../../../shared/api/post/postCreate';
 import ContainerForm from './containerForm/ContainerForm';
-import { IPost } from '../model/IPost';
+
 import { initialValues } from '../lib/initialValues';
+import { IAllFiles, IPost } from '../model/IPost';
 
 //TODO: Сделать контайнер и сделать только в нем опасити
 //TODO: Сделать мазайку для картинок
