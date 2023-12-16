@@ -9,7 +9,7 @@ async function start() {
   app.setGlobalPrefix("api");
   app.enableCors();
 
-  const config = new DocumentBuilder()
+  const config = new DocumentBuilder() // Создание документации
     .setTitle("MESSENGER")
     .setDescription("Документация REST API")
     .setVersion("1.0.0")

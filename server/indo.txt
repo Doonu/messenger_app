@@ -1,3 +1,0 @@
-nest generate module users - содание модуля
-
-// 33:19
