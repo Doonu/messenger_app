@@ -1,5 +1,5 @@
 import { createAsyncThunk } from '@reduxjs/toolkit';
-import { postState } from '../../../entities/post/model/IPost';
+import { IPostState } from '../../../entities/post/model/IPost';
 import { IConfigAsyncThunk as IDefaultConfigAsyncThunk, IError } from '../../models/errors';
 import { RootState } from '../../../app/store';
 import API from '../interceptors';
@@ -11,15 +11,15 @@ interface IConfigAsyncThunk extends IDefaultConfigAsyncThunk {
 }
 // Передавать здесь все данные о пользователе, чтоб не делать доп запрос
 
-const getAllPost = createAsyncThunk<postState[], undefined, IConfigAsyncThunk>(
+const getAllPost = createAsyncThunk<IPostState[], undefined, IConfigAsyncThunk>(
   'posts/getAll',
   (_, { rejectWithValue, dispatch }) => {
-    return API<postState[]>({
+    return API<IPostState[]>({
       url: `http://localhost:5000/api/posts`,
       method: 'GET',
     })
       .then(({ data }) => {
-        return data.map((post: postState) => {
+        return data.map((post: IPostState) => {
           return {
             ...post,
             author: {

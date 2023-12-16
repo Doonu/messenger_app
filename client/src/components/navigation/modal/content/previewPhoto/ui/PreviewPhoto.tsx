@@ -20,11 +20,11 @@ import { authState } from '../../../../../../entities/user/user.slice';
 import { postTime } from '../../../../../../shared/util/time';
 import MainPostProfile from '../../../../../ui/profiles/mainPost';
 import { CarouselRef } from 'antd/es/carousel';
-import { IPhotos } from '../../../../../forms/addPost/model/IPost';
+import { IPhotos } from '../../../../../forms/AddPost/model/IPost';
 import { useFormikContext } from 'formik';
 import { Like } from '../../../../../ui/buttons/likesButton/like';
 import { Slice } from '../../../../../ui/slice';
-import { IPost } from '../../../../../forms/addPost/model/IPost';
+import { IPost } from '../../../../../forms/AddPost/model/IPost';
 
 interface PreviewPhotoProps {
   list: IPhotos[];
@@ -42,7 +42,7 @@ export const PreviewPhoto: FC<PreviewPhotoProps> = ({ list, description }) => {
 
   const dispatch = useAppDispatch();
   const handlerGetProfile = () => {
-    dispatch(getProfile({}))
+    dispatch(getProfile())
       .unwrap()
       .then((fetchedUser) => {
         setUserPhoto(fetchedUser);

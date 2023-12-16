@@ -10,6 +10,8 @@ import {
 } from './photo.styled';
 import { IPhoto } from '../model/IPhoto';
 
+//TODO: Перенести в widgets
+
 export const Photo: FC<IPhoto> = ({ url, onDelete, onClick }) => {
   const [hoveredPhoto, setHoveredPhoto] = useState(false);
 

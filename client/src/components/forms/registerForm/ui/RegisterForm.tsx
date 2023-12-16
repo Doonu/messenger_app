@@ -1,5 +1,5 @@
 import React from 'react';
-import { Formik, FormikHelpers } from 'formik';
+import { Formik } from 'formik';
 import { Form } from 'antd';
 import {
   SContainerAuth,
@@ -31,7 +31,7 @@ const RegisterForm = () => {
     repeatPassword: '',
   };
 
-  const formSubmit = (values: IInitialValue, formikHelpers: FormikHelpers<IInitialValue>) => {
+  const formSubmit = (values: IInitialValue) => {
     const dataRegister: IRegister = {
       email: values.email,
       name: values.name,
@@ -40,9 +40,9 @@ const RegisterForm = () => {
 
     dispatch(postRegistration(dataRegister))
       .unwrap()
-      .then((fetchedId) => {
+      .then(() => {
         navigate('/');
-        dispatch(getProfile({ id: fetchedId.id }))
+        dispatch(getProfile())
           .unwrap()
           .then((fetchedProfile) => console.log(fetchedProfile))
           .catch(() => {});

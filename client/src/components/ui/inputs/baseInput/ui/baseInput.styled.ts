@@ -10,6 +10,8 @@ interface SInputProps {
 export const SLoaderSmall = styled(LoaderSmall)``;
 
 export const SLabel = styled.label`
+  display: block;
+  width: 100%;
   position: relative;
   & > div {
     position: absolute;
@@ -27,6 +29,7 @@ export const SInput = styled(Input)<SInputProps>`
   color: ${({ theme }) => theme.colors.active};
   width: 100%;
   height: ${({ height }) => height};
+  flex: 1;
   min-width: ${({ $minWidth }) => $minWidth};
 
   &::placeholder {

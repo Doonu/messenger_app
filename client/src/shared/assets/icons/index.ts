@@ -10,6 +10,7 @@ import { TbShare3 } from 'react-icons/tb';
 import { GoComment } from 'react-icons/go';
 import { SlMagnifierAdd } from 'react-icons/sl';
 import { MdArrowBackIos, MdArrowForwardIos } from 'react-icons/md';
+import { FaPen } from 'react-icons/fa';
 
 export const ArrowDown = styled(IoCaretDownOutline)``;
 
@@ -21,6 +22,12 @@ export const Camera = styled(BsFillCameraFill).attrs({
   &:hover {
     opacity: 0.7;
   }
+`;
+
+export const Redaction = styled(FaPen).attrs({
+  size: 15,
+})`
+  color: ${({ theme }) => theme.colors.text};
 `;
 
 export const Video = styled(AiOutlinePlayCircle).attrs({
@@ -67,9 +74,7 @@ export const Like = styled(FaRegHeart)`
   color: ${({ theme }) => theme.colors.text};
 `;
 
-export const BgLike = styled(IoMdHeart).attrs({
-  color: 'white',
-})``;
+export const BgLike = styled(IoMdHeart).attrs({})``;
 
 export const Shared = styled(TbShare3)`
   color: ${({ theme }) => theme.colors.text};

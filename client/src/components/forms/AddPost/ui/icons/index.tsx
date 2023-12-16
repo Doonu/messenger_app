@@ -38,7 +38,7 @@ const Icons: FC<IIconsProps> = ({ setData, data }) => {
       return;
     }
 
-    Array.from(files).forEach((fileItem, i) => {
+    Array.from(files).forEach((fileItem) => {
       let reader = new FileReader();
 
       reader.onloadend = () => {
@@ -70,7 +70,7 @@ const Icons: FC<IIconsProps> = ({ setData, data }) => {
       return;
     }
 
-    Array.from(files).forEach((fileItem, i) => {
+    Array.from(files).forEach((fileItem) => {
       let reader = new FileReader();
 
       reader.onloadend = () => {

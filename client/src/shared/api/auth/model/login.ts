@@ -1,5 +1,4 @@
 export interface IPostLogin {
-  id: number;
   token: string;
 }
 
@@ -10,5 +9,4 @@ export interface ILogin {
 
 export interface ApiLogin {
   token: string;
-  id: number;
 }

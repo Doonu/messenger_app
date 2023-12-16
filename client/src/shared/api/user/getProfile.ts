@@ -5,6 +5,7 @@ import { IConfigAsyncThunk as IDefaultConfigAsyncThunk, IError } from '../../mod
 import { RootState } from '../../../app/store';
 import { AxiosError } from 'axios';
 import { showMessage } from '../../../entities/notification/notification.slice';
+import { logout } from '../../../entities/auth/auth.slice';
 
 interface IConfigAsyncThunk extends IDefaultConfigAsyncThunk {
   state: RootState;
@@ -23,10 +24,6 @@ export interface IGetProfile {
   avatar: string;
 }
 
-export interface IProfile {
-  id?: number;
-}
-
 export interface ApiProfile {
   name: string;
   email: string;
@@ -42,17 +39,12 @@ export interface ApiProfile {
   imgSubstitute: string;
 }
 
-const getProfile = createAsyncThunk<IGetProfile, IProfile, IConfigAsyncThunk>(
-  'auth/login',
-  ({ id }, { rejectWithValue, dispatch }) => {
-    let currentId = id;
-    if (!currentId) {
-      const session = localStorage.getItem('session');
-      if (session) currentId = JSON.parse(session).id;
-    }
+const getProfile = createAsyncThunk<IGetProfile, undefined, IConfigAsyncThunk>(
+  'auth/getProfile',
+  (_, { rejectWithValue, dispatch }) => {
     return API<ApiProfile>({
-      url: `http://localhost:5000/api/users/${currentId}`,
-      method: 'GET',
+      url: `http://localhost:5000/api/users/profile`,
+      method: 'POST',
     })
       .then(({ data }) => ({
         name: data.name,
@@ -70,6 +62,7 @@ const getProfile = createAsyncThunk<IGetProfile, IProfile, IConfigAsyncThunk>(
       }))
       .catch(({ response }: AxiosError<IError>) => {
         const title = response?.data.message || 'Неизвестная ошибка';
+        dispatch(logout());
         dispatch(
           showMessage({
             title: title,

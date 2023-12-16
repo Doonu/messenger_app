@@ -18,6 +18,7 @@ import Files from '../files';
 import Photos from '../photos';
 import Content from '../content';
 import Icons from '../icons';
+import Features from '../features';
 
 interface IContainerFormProps {
   isDraggablePhoto: boolean;
@@ -56,7 +57,7 @@ const ContainerForm: FC<IContainerFormProps> = ({
       return;
     }
 
-    Array.from(files).forEach((fileItem, i) => {
+    Array.from(files).forEach((fileItem) => {
       let reader = new FileReader();
 
       if (fileItem.type.indexOf('image') === 0) {
@@ -106,13 +107,14 @@ const ContainerForm: FC<IContainerFormProps> = ({
           {!!data.photos.length && <Photos data={data} setData={setData} />}
           {!!data.files.length && <Files data={data} setData={setData} />}
 
+          {data.photos.length > 1 && <Features />}
           <SContainerIcons $position={values.isActive}>
             <Icons setData={setData} data={data} />
             {values.isActive && (
               <SSubmit>
                 {!isCorrect && <Settings />}
                 <BaseButton htmlType="submit" disabled={isCorrect} height="30px">
-                  Отправить
+                  Опубликовать
                 </BaseButton>
               </SSubmit>
             )}

@@ -24,12 +24,11 @@ const postLogin = createAsyncThunk<IPostLogin, ILogin, IConfigAsyncThunk>(
           'session',
           JSON.stringify({
             at: data.token,
-            id: data.id,
           })
         );
+
         return {
           token: data.token,
-          id: data.id,
         };
       })
       .catch(({ response }: AxiosError<IError>) => {

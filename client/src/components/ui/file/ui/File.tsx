@@ -20,7 +20,7 @@ const File: FC<IFile> = ({ url, onDelete, file }) => {
     <SContainer title={file.name}>
       <SClose onClick={onDelete}>X</SClose>
       <SLink draggable="false" target="_blank" download href={url}>
-        {isIcons === 'docx' && <Word />}
+        {(isIcons === 'docx' || isIcons === 'doc') && <Word />}
         {isIcons === 'pdf' && <Pdf />}
 
         <SText>{file.name}</SText>

@@ -15,12 +15,13 @@ const Providers = () => {
   return (
     <ThemeProvider theme={darkTheme}>
       <GlobalStyles />
-      <AntdConfigProvider />
-      <Provider store={store}>
-        <AuthProvider />
-        <Notification />
-        <Router />
-      </Provider>
+      <AntdConfigProvider>
+        <Provider store={store}>
+          <AuthProvider />
+          <Notification />
+          <Router />
+        </Provider>
+      </AntdConfigProvider>
     </ThemeProvider>
   );
 };

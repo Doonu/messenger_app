@@ -21,7 +21,7 @@ const Input: FC<IInput> = ({
     else return '20px';
   }, [border]);
 
-  const handleIcon = () => {
+  const handlePasswordIcon = () => {
     allVariantType.forEach((variant) => {
       if (variant.type !== variantType?.type) {
         setVariantType(variant);
@@ -45,7 +45,7 @@ const Input: FC<IInput> = ({
         {...props}
       />
       {(variantType?.type === 'password' || variantType?.type === 'text') && !loading && (
-        <SIcon onClick={handleIcon}>{variantType && variantType.icon}</SIcon>
+        <SIcon onClick={handlePasswordIcon}>{variantType && variantType.icon}</SIcon>
       )}
       {loading && <SLoaderSmall size={sizeLoading} />}
     </SLabel>

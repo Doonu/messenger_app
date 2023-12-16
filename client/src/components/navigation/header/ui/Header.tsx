@@ -1,8 +1,7 @@
 import React from 'react';
 
-import { SContainer, SLeft, SMainProfile, STitle, SWrapper } from './header.styled';
+import { SContainer, SMainProfile, STitle, SWrapper } from './header.styled';
 import Navbar from '../../../ui/navbar';
-import MainProfile from '../../../ui/profiles/main';
 import Logo from '../../../ui/logo';
 import { useAppSelector } from '../../../../hooks/redux';
 import { selectorUser } from '../../../../entities/user/user.selectors';

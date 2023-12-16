@@ -1,10 +1,6 @@
 import styled, { css } from 'styled-components';
 import TextareaAutosize from 'react-textarea-autosize';
 
-interface IImgProps {
-  color: string;
-}
-
 interface IPositionProps {
   $position: boolean;
   $isDraggable?: boolean;
@@ -23,18 +19,6 @@ export const SContainer = styled.div<IPositionProps>`
     css`
       opacity: ${$isDraggable ? '0' : '1'};
     `}
-`;
-
-export const SProfile = styled.div<IImgProps>`
-  background: ${({ color }) => color};
-  font-size: 22px;
-  min-width: 40px;
-  height: 40px;
-  border-radius: 99%;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  color: ${({ theme }) => theme.colors.active};
 `;
 
 export const SInput = styled(TextareaAutosize)<IPositionProps>`
@@ -70,5 +54,14 @@ export const SInput = styled(TextareaAutosize)<IPositionProps>`
   &::-webkit-scrollbar {
     width: 0;
     height: 0;
+  }
+
+  @media (max-width: ${({ theme }) => theme.breakpoints.bigDesktop}) {
+    ${({ $position }) =>
+      $position &&
+      css`
+        font-size: 14px;
+        margin: -10px -10px 10px 0px;
+      `}
   }
 `;

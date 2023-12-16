@@ -1,11 +1,15 @@
 import React, { useEffect, useState } from 'react';
-import Post from '../../../../components/ui/post/ui/Post';
 import AllContainer from '../../../../components/layouts/all';
-import AddPost from '../../../../components/forms/addPost';
+import AddPost from '../../../../components/forms/AddPost';
 import { useAppDispatch, useAppSelector } from '../../../../hooks/redux';
 import { selectorPost } from '../../../../entities/post/post.selectors';
 import { SList } from './Home.styled';
 import getAllPost from '../../../../shared/api/post/getAllPost';
+import Post from '../../../../widgets/post/ui/Post';
+import { isAuthSelector } from '../../../../entities/auth/auth.selectors';
+import { setAllPosts } from '../../../../entities/post/post.slice';
+
+//TODO: Оптимизировать компонент драгон-input, ререндер на каждый клик
 
 const Home = () => {
   const [isDraggablePhoto, setIsDraggablePhoto] = useState(false);
@@ -13,6 +17,7 @@ const Home = () => {
   const dispatch = useAppDispatch();
 
   const { posts } = useAppSelector(selectorPost);
+  const isAuth = useAppSelector(isAuthSelector); // TODO:Убрать из entities
 
   const handlerPhotoDrag = () => {
     setIsDraggablePhoto((prev) => !prev);
@@ -24,6 +29,10 @@ const Home = () => {
 
   useEffect(() => {
     dispatch(getAllPost());
+
+    return () => {
+      dispatch(setAllPosts([]));
+    };
   }, []);
 
   return (

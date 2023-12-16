@@ -4,8 +4,9 @@ import { Dropdown } from 'antd';
 import { settingItemsDropdown } from '../../lib/settingsOptions';
 
 const Settings: FC = () => {
+  //TODO: Добавить хук useDevice и изменять положение
   return (
-    <Dropdown trigger={['hover']} menu={{ items: settingItemsDropdown }}>
+    <Dropdown placement="bottom" trigger={['hover']} menu={{ items: settingItemsDropdown }}>
       <Setting />
     </Dropdown>
   );

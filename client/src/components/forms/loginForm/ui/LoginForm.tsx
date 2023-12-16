@@ -1,5 +1,5 @@
 import React from 'react';
-import { Formik, FormikHelpers } from 'formik';
+import { Formik } from 'formik';
 import {
   SBaseButton,
   SFormContainer,
@@ -16,6 +16,9 @@ import { useAppDispatch } from '../../../../hooks/redux';
 import postLogin from '../../../../shared/api/auth/postLogin';
 import getProfile from '../../../../shared/api/user/getProfile';
 
+//TODO: Сделать мобилку
+//TODO: Разбить на компоненты
+
 const LoginForm = () => {
   const dispatch = useAppDispatch();
 
@@ -24,11 +27,11 @@ const LoginForm = () => {
     password: '',
   };
 
-  const formSubmit = (values: ILogin, formikHelpers: FormikHelpers<ILogin>) => {
+  const formSubmit = (values: ILogin) => {
     dispatch(postLogin(values))
       .unwrap()
-      .then((fetchedId) => {
-        dispatch(getProfile({ id: fetchedId.id }))
+      .then(() => {
+        dispatch(getProfile())
           .unwrap()
           .catch(() => {});
       })
@@ -45,7 +48,7 @@ const LoginForm = () => {
         validateOnMount={false}
         onSubmit={formSubmit}
       >
-        {({ handleSubmit, setFieldValue, values, errors, handleBlur, getFieldHelpers }) => (
+        {({ handleSubmit, setFieldValue, values, errors, handleBlur }) => (
           <SForm layout="vertical" onFinish={handleSubmit}>
             <SFormContainer>
               <STitle>С возвращением!</STitle>

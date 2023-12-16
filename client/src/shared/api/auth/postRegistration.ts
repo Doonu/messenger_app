@@ -24,12 +24,11 @@ const postRegistration = createAsyncThunk<IPostRegister, IRegister, IConfigAsync
           'session',
           JSON.stringify({
             at: data.token,
-            id: data.id,
           })
         );
+
         return {
           token: data.token,
-          id: data.id,
         };
       })
       .catch(({ response }: AxiosError<IError>) => {

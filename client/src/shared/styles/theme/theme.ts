@@ -16,19 +16,19 @@ export const baseTheme: ITheme = {
     secondaryBg: '',
     secondaryText: '',
   },
-  transition: {
-    base: '0.5s',
-    long: '1s',
-  },
-  radius: {
-    base: '10px',
-  },
   breakpoints: {
     mobile: '450px',
     tablet: '600px',
     oldDesktop: '900px',
     desktop: '1200px',
     bigDesktop: '1439px',
+  },
+  transition: {
+    base: '0.5s',
+    long: '1s',
+  },
+  radius: {
+    base: '10px',
   },
   type: 'dark',
 };

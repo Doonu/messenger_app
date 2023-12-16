@@ -1,6 +1,5 @@
 export interface IPostRegister {
   token: string;
-  id: number;
 }
 
 export interface IRegister {
@@ -11,5 +10,4 @@ export interface IRegister {
 
 export interface ApiRegister {
   token: string;
-  id: number;
 }

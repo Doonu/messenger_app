@@ -1,11 +1,12 @@
-import { postState } from '../../../../entities/post/model/IPost';
+import { IPostState } from '../../../../entities/post/model/IPost';
 
-export type IPost = Pick<postState, 'content' | 'isDisabledComments'> & {
+export type IPost = Pick<IPostState, 'content' | 'isDisabledComments'> & {
   isActive: boolean;
   isWarningModal: boolean;
   isDraggablePhotoFocus: boolean;
   isPreviewPhoto: boolean;
   currentIndex: number;
+  view: 'slider' | 'grid';
 
   isWarningModalTitle: string;
 };
@@ -19,11 +20,6 @@ export interface IFiles {
   id: string;
   file: any;
   url: any;
-}
-
-export interface IFilesPost {
-  id: string;
-  file: any;
 }
 
 export interface IPhotos {

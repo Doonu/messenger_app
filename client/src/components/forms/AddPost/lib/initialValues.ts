@@ -7,6 +7,7 @@ export const initialValues: IPost = {
   isDraggablePhotoFocus: true,
   isPreviewPhoto: false,
   isDisabledComments: false,
+  view: 'slider',
   currentIndex: 0,
 
   isWarningModalTitle: '',

@@ -1,6 +1,12 @@
 import { createGlobalStyle } from 'styled-components';
 
 export const GlobalStyles = createGlobalStyle`
+  #root{
+    height: 100vh;
+    @media (max-width: ${({ theme }) => theme.breakpoints.tablet}) {
+      height: auto;
+    };
+  }
     * {
         padding: 0;
         margin: 0;
@@ -14,7 +20,7 @@ export const GlobalStyles = createGlobalStyle`
           height: auto;
         };
     }
-
+    
     *,
     *::before,
     *::after {
@@ -61,12 +67,6 @@ export const GlobalStyles = createGlobalStyle`
     ul, ul li {
         list-style: none;
     }
-    #root{
-      height: 100vh;
-      @media (max-width: ${({ theme }) => theme.breakpoints.tablet}) {
-        height: auto;
-      };
-    }
     .slide-in{
       position: fixed;
       top: 0;
@@ -94,12 +94,23 @@ export const GlobalStyles = createGlobalStyle`
     
     .ant-dropdown .ant-dropdown-menu{
       background-color: #313338;
-      border: 1px solid #4c4d52;
+      border: 1px solid ${({ theme }) => theme.colors.secondaryText};
       & > li {
         color: white !important;
         &:hover{
           opacity: 0.6;
         }
       }
+    }
+
+    .ant-select-dropdown {
+      background: ${({ theme }) => theme.colors.secondaryBg};
+      border: 1px solid ${({ theme }) => theme.colors.white};
+    }
+    .ant-select-dropdown .ant-select-item-option-content{
+      color: ${({ theme }) => theme.colors.white}
+    }
+    .ant-select-dropdown .ant-select-item-option-selected:not(.ant-select-item-option-disabled){
+      background: ${({ theme }) => theme.colors.blue};
     }
 `;

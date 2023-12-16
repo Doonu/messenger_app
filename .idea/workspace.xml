@@ -1,0 +1,291 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="AutoImportSettings">
+    <option name="autoReloadType" value="SELECTIVE" />
+  </component>
+  <component name="ChangeListManager">
+    <list default="true" id="39b3eb6f-1b56-4635-abfb-4670fcba680d" name="Changes" comment="feat: создание приложения">
+      <change afterPath="$PROJECT_DIR$/client/src/components/navigation/modal/content/previewPhoto/index.ts" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/client/src/components/navigation/modal/content/previewPhoto/ui/PreviewPhoto.tsx" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/client/src/components/navigation/modal/content/previewPhoto/ui/previewPhoto.styled.ts" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/client/src/components/navigation/modal/content/warningCountPhotos/index.ts" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/client/src/components/navigation/modal/content/warningCountPhotos/ui/WarningCountPhotos.tsx" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/client/src/components/navigation/modal/content/warningCountPhotos/ui/warningCountPhotos.styled.ts" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/client/src/components/navigation/modal/index.ts" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/client/src/components/navigation/modal/model/IModal.ts" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/client/src/components/navigation/modal/ui/ModalBase.tsx" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/client/src/components/navigation/modal/ui/modalBase.styled.ts" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/client/src/components/ui/buttons/likesButton/like/index.ts" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/client/src/components/ui/buttons/likesButton/like/model/ILikeButton.ts" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/client/src/components/ui/buttons/likesButton/like/ui/Like.tsx" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/client/src/components/ui/buttons/likesButton/like/ui/like.styled.ts" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/client/src/components/ui/photos/photo/index.ts" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/client/src/components/ui/photos/photo/model/IPhoto.ts" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/client/src/components/ui/photos/photo/ui/Photo.tsx" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/client/src/components/ui/photos/photo/ui/photo.styled.ts" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/client/src/components/ui/slice/index.ts" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/client/src/components/ui/slice/ui/Slice.tsx" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/client/src/components/ui/slice/ui/slice.styled.ts" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/client/src/entities/post/model/IPost.ts" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/client/src/entities/post/post.selectors.ts" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/client/src/entities/post/post.slice.ts" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/client/src/hooks/outside.ts" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/client/src/pages/private/home/ui/Home.styled.ts" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/client/src/shared/util/time.ts" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/server/src/posts/posts.model.ts" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/client/package-lock.json" beforeDir="false" afterPath="$PROJECT_DIR$/client/package-lock.json" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/client/package.json" beforeDir="false" afterPath="$PROJECT_DIR$/client/package.json" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/client/src/app/App.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/client/src/app/App.tsx" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/client/src/app/providers/AuthProvider.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/client/src/app/providers/AuthProvider.tsx" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/client/src/app/router/index.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/client/src/app/router/index.tsx" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/client/src/components/forms/AddPost/ui/AddPost.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/client/src/components/forms/AddPost/ui/AddPost.tsx" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/client/src/components/forms/AddPost/ui/addPost.styled.ts" beforeDir="false" afterPath="$PROJECT_DIR$/client/src/components/forms/AddPost/ui/addPost.styled.ts" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/client/src/components/forms/registerForm/ui/RegisterForm.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/client/src/components/forms/registerForm/ui/RegisterForm.tsx" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/client/src/components/forms/searchForm/ui/SearchForm.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/client/src/components/forms/searchForm/ui/SearchForm.tsx" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/client/src/components/navigation/header/ui/Header.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/client/src/components/navigation/header/ui/Header.tsx" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/client/src/components/ui/buttons/baseButton/model/IBaseButton.ts" beforeDir="false" afterPath="$PROJECT_DIR$/client/src/components/ui/buttons/baseButton/model/IBaseButton.ts" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/client/src/components/ui/buttons/baseButton/ui/BaseButton.styled.ts" beforeDir="false" afterPath="$PROJECT_DIR$/client/src/components/ui/buttons/baseButton/ui/BaseButton.styled.ts" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/client/src/components/ui/buttons/baseButton/ui/BaseButton.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/client/src/components/ui/buttons/baseButton/ui/BaseButton.tsx" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/client/src/components/ui/navbar/ui/navbar.styled.ts" beforeDir="false" afterPath="$PROJECT_DIR$/client/src/components/ui/navbar/ui/navbar.styled.ts" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/client/src/components/ui/post/ui/Post.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/client/src/components/ui/post/ui/Post.tsx" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/client/src/components/ui/post/ui/post.styled.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/client/src/components/ui/post/ui/post.styled.tsx" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/client/src/components/ui/profiles/mainPost/ui/MainPostProfile.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/client/src/components/ui/profiles/mainPost/ui/MainPostProfile.tsx" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/client/src/components/ui/profiles/mainPost/ui/mainPost.styled.ts" beforeDir="false" afterPath="$PROJECT_DIR$/client/src/components/ui/profiles/mainPost/ui/mainPost.styled.ts" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/client/src/entities/user/user.slice.ts" beforeDir="false" afterPath="$PROJECT_DIR$/client/src/entities/user/user.slice.ts" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/client/src/pages/private/home/Home.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/client/src/pages/private/home/ui/Home.tsx" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/client/src/pages/private/home/index.ts" beforeDir="false" afterPath="$PROJECT_DIR$/client/src/pages/private/home/index.ts" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/client/src/shared/api/auth/postLogin.ts" beforeDir="false" afterPath="$PROJECT_DIR$/client/src/shared/api/auth/postLogin.ts" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/client/src/shared/api/auth/postRegistration.ts" beforeDir="false" afterPath="$PROJECT_DIR$/client/src/shared/api/auth/postRegistration.ts" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/client/src/shared/api/user/getProfile.ts" beforeDir="false" afterPath="$PROJECT_DIR$/client/src/shared/api/user/getProfile.ts" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/client/src/shared/assets/icons/index.ts" beforeDir="false" afterPath="$PROJECT_DIR$/client/src/shared/assets/icons/index.ts" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/server/src/app.module.ts" beforeDir="false" afterPath="$PROJECT_DIR$/server/src/app.module.ts" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/server/src/auth/auth.controller.ts" beforeDir="false" afterPath="$PROJECT_DIR$/server/src/auth/auth.controller.ts" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/server/src/auth/auth.service.ts" beforeDir="false" afterPath="$PROJECT_DIR$/server/src/auth/auth.service.ts" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/server/src/users/dto/create-user.dto.ts" beforeDir="false" afterPath="$PROJECT_DIR$/server/src/users/dto/login-user.dto.ts" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/server/src/users/users.controller.ts" beforeDir="false" afterPath="$PROJECT_DIR$/server/src/users/users.controller.ts" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/server/src/users/users.model.ts" beforeDir="false" afterPath="$PROJECT_DIR$/server/src/users/users.model.ts" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/server/src/users/users.service.ts" beforeDir="false" afterPath="$PROJECT_DIR$/server/src/users/users.service.ts" afterDir="false" />
+    </list>
+    <option name="SHOW_DIALOG" value="false" />
+    <option name="HIGHLIGHT_CONFLICTS" value="true" />
+    <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
+    <option name="LAST_RESOLUTION" value="IGNORE" />
+  </component>
+  <component name="Git.Settings">
+    <option name="RECENT_BRANCH_BY_REPOSITORY">
+      <map>
+        <entry key="$PROJECT_DIR$" value="main" />
+      </map>
+    </option>
+    <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
+  </component>
+  <component name="MarkdownSettingsMigration">
+    <option name="stateVersion" value="1" />
+  </component>
+  <component name="ProblemsViewState">
+    <option name="selectedTabId" value="ProjectErrors" />
+  </component>
+  <component name="ProjectColorInfo">{
+  &quot;associatedIndex&quot;: 6
+}</component>
+  <component name="ProjectId" id="2VqFTVyOfnnVozrAqAsFOgWOpNf" />
+  <component name="ProjectLevelVcsManager">
+    <ConfirmationsSetting value="2" id="Add" />
+  </component>
+  <component name="ProjectViewState">
+    <option name="hideEmptyMiddlePackages" value="true" />
+    <option name="showLibraryContents" value="true" />
+  </component>
+  <component name="PropertiesComponent"><![CDATA[{
+  "keyToString": {
+    "RunOnceActivity.OpenProjectViewOnStart": "true",
+    "RunOnceActivity.ShowReadmeOnStart": "true",
+    "WebServerToolWindowFactoryState": "false",
+    "eslint.code.style.apply.dismiss": "true",
+    "git-widget-placeholder": "1",
+    "ignore.virus.scanning.warn.message": "true",
+    "last_opened_file_path": "D:/Portfolio/messenger_app/server",
+    "node.js.detected.package.eslint": "true",
+    "node.js.detected.package.standard": "true",
+    "node.js.detected.package.tslint": "true",
+    "node.js.selected.package.eslint": "(autodetect)",
+    "node.js.selected.package.standard": "",
+    "node.js.selected.package.tslint": "(autodetect)",
+    "nodejs_package_manager_path": "npm",
+    "prettier.import.notification.dismissed": "true",
+    "prettierjs.PrettierConfiguration.Package": "D:\\Portfolio\\messenger_app\\client\\node_modules\\prettier",
+    "settings.editor.selected.configurable": "preferences.sourceCode.JavaScript",
+    "ts.external.directory.path": "D:\\Portfolio\\messenger_app\\client\\node_modules\\typescript\\lib",
+    "vue.rearranger.settings.migration": "true"
+  }
+}]]></component>
+  <component name="RecentsManager">
+    <key name="CopyFile.RECENT_KEYS">
+      <recent name="D:\Portfolio\messenger_app\client\src\components\ui\buttons\likesButton\like" />
+      <recent name="D:\Portfolio\messenger_app\client\src\components\ui\buttons\likeButton" />
+      <recent name="D:\Portfolio\messenger_app\client\src\components\ui\profiles\mainPost" />
+      <recent name="D:\Portfolio\messenger_app\client\src\shared\api" />
+      <recent name="D:\Portfolio\messenger_app" />
+    </key>
+    <key name="MoveFile.RECENT_KEYS">
+      <recent name="D:\Portfolio\messenger_app\server\src" />
+      <recent name="D:\Portfolio\messenger_app\client\src\components\ui\buttons\likesButton\likeButton" />
+      <recent name="D:\Portfolio\messenger_app\client\src\components\ui\buttons\likesButton" />
+      <recent name="D:\Portfolio\messenger_app\client\src\components\ui\photos\photo\ui" />
+      <recent name="D:\Portfolio\messenger_app\client\src\pages\private\home\ui" />
+    </key>
+  </component>
+  <component name="RunManager">
+    <configuration name="start:dev" type="js.build_tools.npm" temporary="true" nameIsGenerated="true">
+      <package-json value="$PROJECT_DIR$/server/package.json" />
+      <command value="run" />
+      <scripts>
+        <script value="start:dev" />
+      </scripts>
+      <node-interpreter value="project" />
+      <envs />
+      <method v="2" />
+    </configuration>
+    <recent_temporary>
+      <list>
+        <item itemvalue="npm.start:dev" />
+      </list>
+    </recent_temporary>
+  </component>
+  <component name="SpellCheckerSettings" RuntimeDictionaries="0" Folders="0" CustomDictionaries="0" DefaultDictionary="application-level" UseSingleDictionary="true" transferred="true" />
+  <component name="TaskManager">
+    <task active="true" id="Default" summary="Default task">
+      <changelist id="39b3eb6f-1b56-4635-abfb-4670fcba680d" name="Changes" comment="" />
+      <created>1695555711858</created>
+      <option name="number" value="Default" />
+      <option name="presentableId" value="Default" />
+      <updated>1695555711858</updated>
+      <workItem from="1695555713961" duration="8876000" />
+      <workItem from="1695582719901" duration="977000" />
+      <workItem from="1695660233500" duration="7702000" />
+      <workItem from="1695749940075" duration="7008000" />
+      <workItem from="1695836259475" duration="5475000" />
+      <workItem from="1695843924671" duration="950000" />
+      <workItem from="1696106838371" duration="5621000" />
+      <workItem from="1696147447523" duration="851000" />
+      <workItem from="1696173108059" duration="4737000" />
+      <workItem from="1696613404101" duration="16000" />
+      <workItem from="1696622934281" duration="605000" />
+      <workItem from="1696663091335" duration="1021000" />
+      <workItem from="1696664212206" duration="126000" />
+      <workItem from="1696664370317" duration="326000" />
+      <workItem from="1696664751169" duration="7524000" />
+      <workItem from="1696752965253" duration="15141000" />
+      <workItem from="1696881226766" duration="20000" />
+      <workItem from="1696883111523" duration="681000" />
+      <workItem from="1696921027760" duration="1207000" />
+      <workItem from="1696959996290" duration="1618000" />
+      <workItem from="1697142244039" duration="2009000" />
+      <workItem from="1697220557592" duration="603000" />
+      <workItem from="1697272469847" duration="10388000" />
+      <workItem from="1697367894210" duration="8656000" />
+      <workItem from="1697483434152" duration="41000" />
+      <workItem from="1697828680811" duration="40000" />
+      <workItem from="1697828745496" duration="4875000" />
+      <workItem from="1697872931716" duration="5000" />
+      <workItem from="1697872943906" duration="179000" />
+      <workItem from="1697873131358" duration="3000" />
+      <workItem from="1697873161034" duration="28828000" />
+      <workItem from="1697963484243" duration="5000" />
+      <workItem from="1698083693342" duration="885000" />
+      <workItem from="1698084651344" duration="6401000" />
+      <workItem from="1698172268469" duration="4275000" />
+      <workItem from="1698345277679" duration="8048000" />
+      <workItem from="1698433477161" duration="3707000" />
+      <workItem from="1698437274025" duration="5399000" />
+      <workItem from="1698486828113" duration="7763000" />
+      <workItem from="1698498688599" duration="2355000" />
+      <workItem from="1698574217909" duration="14099000" />
+      <workItem from="1698686483474" duration="2620000" />
+      <workItem from="1698690608344" duration="3476000" />
+      <workItem from="1698772825775" duration="776000" />
+      <workItem from="1698773908160" duration="5492000" />
+      <workItem from="1698868578406" duration="3084000" />
+      <workItem from="1698947145613" duration="7256000" />
+      <workItem from="1699041604237" duration="4797000" />
+      <workItem from="1699088865201" duration="1980000" />
+      <workItem from="1699129932819" duration="5326000" />
+      <workItem from="1699180604063" duration="16372000" />
+      <workItem from="1699384450912" duration="372000" />
+      <workItem from="1699637629263" duration="737000" />
+      <workItem from="1699707657064" duration="20532000" />
+      <workItem from="1699899159851" duration="6355000" />
+      <workItem from="1699985991236" duration="8912000" />
+      <workItem from="1700075212170" duration="4255000" />
+      <workItem from="1700157403973" duration="3856000" />
+      <workItem from="1700244718614" duration="14640000" />
+      <workItem from="1700298157302" duration="9227000" />
+      <workItem from="1700330740251" duration="12950000" />
+      <workItem from="1700384191421" duration="23926000" />
+      <workItem from="1700410936940" duration="2462000" />
+      <workItem from="1700417671728" duration="5810000" />
+      <workItem from="1700507856901" duration="1485000" />
+      <workItem from="1700590121450" duration="7772000" />
+      <workItem from="1700763635173" duration="35000" />
+      <workItem from="1700763678556" duration="3960000" />
+      <workItem from="1700856583575" duration="2605000" />
+      <workItem from="1700899264414" duration="7436000" />
+    </task>
+    <task id="LOCAL-00001" summary="feat: инициализация проекта, добавлена авторизация в бэке и развернута исходный проект на реакт">
+      <option name="closed" value="true" />
+      <created>1695556247367</created>
+      <option name="number" value="00001" />
+      <option name="presentableId" value="LOCAL-00001" />
+      <option name="project" value="LOCAL" />
+      <updated>1695556247367</updated>
+    </task>
+    <task id="LOCAL-00002" summary="fix: удалена ненужная информация">
+      <option name="closed" value="true" />
+      <created>1695556299190</created>
+      <option name="number" value="00002" />
+      <option name="presentableId" value="LOCAL-00002" />
+      <option name="project" value="LOCAL" />
+      <updated>1695556299190</updated>
+    </task>
+    <task id="LOCAL-00003" summary="feat: авторизация и начало стилизации">
+      <option name="closed" value="true" />
+      <created>1698870088284</created>
+      <option name="number" value="00003" />
+      <option name="presentableId" value="LOCAL-00003" />
+      <option name="project" value="LOCAL" />
+      <updated>1698870088284</updated>
+    </task>
+    <task id="LOCAL-00004" summary="feat: создание приложения">
+      <option name="closed" value="true" />
+      <created>1699215315615</created>
+      <option name="number" value="00004" />
+      <option name="presentableId" value="LOCAL-00004" />
+      <option name="project" value="LOCAL" />
+      <updated>1699215315615</updated>
+    </task>
+    <option name="localTasksCounter" value="5" />
+    <servers />
+  </component>
+  <component name="TypeScriptGeneratedFilesManager">
+    <option name="version" value="3" />
+  </component>
+  <component name="Vcs.Log.Tabs.Properties">
+    <option name="TAB_STATES">
+      <map>
+        <entry key="MAIN">
+          <value>
+            <State />
+          </value>
+        </entry>
+      </map>
+    </option>
+  </component>
+  <component name="VcsManagerConfiguration">
+    <MESSAGE value="feat: инициализация проекта, добавлена авторизация в бэке и развернута исходный проект на реакт" />
+    <MESSAGE value="fix: удалена ненужная информация" />
+    <MESSAGE value="feat:" />
+    <MESSAGE value="feat: авторизация и начало стилизации" />
+    <MESSAGE value="feat: создание приложения" />
+    <option name="LAST_COMMIT_MESSAGE" value="feat: создание приложения" />
+  </component>
+</project>

@@ -3,7 +3,7 @@ import styled from 'styled-components';
 export const Containers = styled.div`
   max-width: 1460px;
   margin: 0 auto;
-  //height: calc(100vh - 91px);
+  height: calc(100vh - 91px);
   user-select: none;
   padding: 20px 10px 0 10px;
 `;
@@ -11,7 +11,7 @@ export const Containers = styled.div`
 export const ContainerForm = styled.div`
   max-width: 1440px;
   margin: 0 auto;
-  //height: 100vh;
+  height: 100vh;
   display: flex;
   align-items: center;
   justify-content: center;

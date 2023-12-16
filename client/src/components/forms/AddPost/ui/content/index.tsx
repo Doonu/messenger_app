@@ -1,9 +1,11 @@
 import React from 'react';
-import { SContainer, SProfile, SInput } from './content.styled';
+import { SContainer } from './content.styled';
 import { useFormikContext } from 'formik';
 import { IPost } from '../../model/IPost';
 import { useAppSelector } from '../../../../../hooks/redux';
 import { selectorUser } from '../../../../../entities/user/user.selectors';
+import PhotoProfile from '../../../../ui/profiles/photo';
+import AutosizeInput from '../../../../ui/inputs/autosizeInput';
 
 const Content = () => {
   const { values, setFieldValue } = useFormikContext<IPost>();
@@ -11,8 +13,9 @@ const Content = () => {
 
   return (
     <SContainer $position={values.isActive}>
-      <SProfile color={avatar}>{name[0]}</SProfile>
-      <SInput
+      <PhotoProfile img={avatar}>{name[0]}</PhotoProfile>
+      <AutosizeInput
+        isDrag={true}
         minRows={2}
         value={values.content}
         $position={values.isActive}

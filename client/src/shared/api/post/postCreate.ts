@@ -5,21 +5,21 @@ import { IConfigAsyncThunk as IDefaultConfigAsyncThunk, IError } from '../../mod
 import { RootState } from '../../../app/store';
 import { AxiosError } from 'axios';
 import { showMessage } from '../../../entities/notification/notification.slice';
-import { postState } from '../../../entities/post/model/IPost';
+import { IPostState } from '../../../entities/post/model/IPost';
 
 interface IConfigAsyncThunk extends IDefaultConfigAsyncThunk {
   state: RootState;
 }
 
-type IPostCreate = Pick<postState, 'userId' | 'content' | 'files' | 'isDisabledComments'>;
+type IPostCreate = Pick<IPostState, 'content' | 'files' | 'isDisabledComments' | 'view'>;
 
-interface ApiPostCreate extends postState {}
+interface ApiPostCreate extends IPostState {}
 
-const postCreate = createAsyncThunk<postState, IPostCreate, IConfigAsyncThunk>(
+const postCreate = createAsyncThunk<IPostState, IPostCreate, IConfigAsyncThunk>(
   'posts/create',
   (post, { rejectWithValue, dispatch }) => {
     return API<ApiPostCreate>({
-      url: `http://localhost:5000/api/posts/create`,
+      url: `http://localhost:5000/api/posts`,
       headers: { 'Content-Type': 'multipart/form-data' },
       method: 'POST',
       data: post,
@@ -37,6 +37,7 @@ const postCreate = createAsyncThunk<postState, IPostCreate, IConfigAsyncThunk>(
           createdAt: data.createdAt,
           updatedAt: data.updatedAt,
           isDisabledComments: data.isDisabledComments,
+          view: data.view,
           author: {
             name: data.author.name,
             imgSubstitute: data.author.imgSubstitute,
