@@ -1,20 +1,21 @@
 import React, { FC, useState } from 'react';
 
-import { useAppDispatch } from '../../../../hooks/redux';
+import { useAppDispatch, useAppSelector } from '../../../../hooks/redux';
+import { selectorUser } from '../../../../entities/user/user.selectors';
 import { Formik } from 'formik';
-
 import { Form } from 'antd';
 import { WarningCountPhotos } from '../../../navigation/modal';
 import ModalBase from '../../../navigation/modal/ui/ModalBase';
 import { PreviewPhoto } from '../../../navigation/modal/content/previewPhoto';
 import postCreate from '../../../../shared/api/post/postCreate';
 import ContainerForm from './containerForm/ContainerForm';
-
+import { IPost, IAllFiles } from '../model/IPost';
 import { initialValues } from '../lib/initialValues';
-import { IAllFiles, IPost } from '../model/IPost';
 
-//TODO: Сделать контейнер и сделать только в нем опасити
+//TODO: Сделать контайнер и сделать только в нем опасити
 //TODO: Сделать мазайку для картинок
+//TODO: Перенести в slice
+//TODO: Подумать -> создать в entities папочку с сохраненными формами(savedFilters/addPost)
 
 interface IPostProps {
   isDraggablePhoto: boolean;
@@ -25,6 +26,8 @@ const AddPost: FC<IPostProps> = ({ isDraggablePhoto, handlerChange }) => {
   const [allFiles, setAllFiles] = useState<IAllFiles>({ photos: [], files: [] });
 
   const dispatch = useAppDispatch();
+
+  const { id } = useAppSelector(selectorUser);
 
   return (
     <Formik<IPost>
@@ -37,6 +40,7 @@ const AddPost: FC<IPostProps> = ({ isDraggablePhoto, handlerChange }) => {
         if (!photosSend) return;
         dispatch(
           postCreate({
+            userId: +id,
             content: values.content.toString().split('\n'),
             files: [...photosSend, ...filesSend],
             isDisabledComments: values.isDisabledComments,
